@@ -1,151 +1,53 @@
 /* src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-/* GENERAL */
-
-/* Previene el desbordamiento de cualquier elemento */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* Global tweaks */
+html, body, #root {
+  height: 100%;
 }
 
-html, body {
-  width: 100%;
-  overflow-x: hidden; /* Previene el desbordamiento horizontal */
+html {
+  scroll-behavior: smooth; /* smooth anchors */
 }
 
 body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  color: #333;
-  background-color: #f9f9f9;
-  line-height: 1.6;
+  @apply bg-white text-gray-900 antialiased;
 }
 
-h1, h2, h3 {
-  color: #333;
-  margin: 0;
+/* Header height (used by scroll-mt utilities) */
+:root {
+  --header-h: 80px;
 }
 
-a {
-  text-decoration: none;
-  color: #ebedef;
-  transition: color 0.3s ease;
+/* Reset you had that still helps */
+* {
+  box-sizing: border-box;
 }
-
-a:hover {
-  color: #f39c12;
+/* ---- Carousel premium tweaks ---- */
+.slick-slide .card-scaled {
+  transform: translateY(0) scale(1);
 }
-
-/* MEDIA QUERIES - RESPONSIVE DESIGN */
-
-/* Para pantallas de tablets (anchura máxima de 1024px) */
-@media (max-width: 1024px) {
-  .hero-content {
-    margin-top: 60px; /* Elimina el margen negativo en móviles */
-    padding: 15px; /* Reduce un poco el padding en móviles */
-  }
-
-  .logo {
-    width: 130px;
-    height: auto;
-    margin-left: -12px;
-  }
-
-  .menu {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .about-us {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .about-text {
-    max-width: 90%;
-  }
-
-  .testimonials {
-    flex-direction: column; /* Cambia a disposición en columna */
-    align-items: center; /* Alinea los elementos en el centro */
-  }
-
-  .testimonial {
-    margin-bottom: 20px; /* Añade espacio entre testimonios */
-  }
-
-  .testimonial img {
-    width: 80px; /* Reduce el tamaño de las imágenes */
-    height: 80px;
-  }
-
-  .hero-content h1 {
-    font-size: 3.5rem;
-  }
-
-  .hero-content p {
-    font-size: 1.5rem;
-  }
-
-  .cta-button {
-    font-size: 1rem;
-    padding: 8px 16px;
-  }
+.slick-slide.slick-center .card-scaled {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.18);
 }
-
-/* Para pantallas de móviles (anchura máxima de 600px) */
-@media (max-width: 600px) {
-  .hero-content h1 {
-    font-size: 2.5rem;
-  }
-
-  .hero-content p {
-    font-size: 1rem;
-  }
-
-  .cta-button {
-    font-size: 1rem;
-    padding: 8px 16px;
-  }
-
-  .about-us {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .about-text {
-    max-width: 90%;
-  }
-
-  .testimonials {
-    flex-direction: column;
-  }
-
-  .testimonial img {
-    width: 80px;
-    height: 80px;
-  }
-
-  .contact-section h2 {
-    font-size: 2rem;
-  }
-
-  /* Mostrar el menú hamburguesa en móviles */
-  .hamburger {
-    display: flex;
-  }
-
-  .menu {
-    display: none;
-  }
-
-  .menu.open {
-    display: flex;
-  }
-
-  .testimonials-section h2 {
-    font-size: 2rem;
-    margin-bottom: 40px;
-  }
+.slick-dots li.slick-active span {
+  background: #00B4D8 !important;
+  width: 28px !important;
+}
+/* ==== TESTIMONIALS (Swiper) ==== */
+.testi .swiper-pagination-bullet {
+  background: #0F2740;       /* color base */
+  opacity: .35;              /* atenuado */
+  width: 8px;
+  height: 8px;
+}
+.testi .swiper-pagination-bullet-active {
+  background: #00B4D8;       /* color acento */
+  opacity: 1;
+  width: 26px;               /* pastilla activa más larga */
+  border-radius: 9999px;
+  transition: all .25s ease;
 }

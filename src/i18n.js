@@ -1,151 +1,28 @@
+// src/i18n.js
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
-
-// Traducciones
-const resources = {
-  es: {
-    translation: {
-      welcome: "¡Bienvenido a Arepas & Más!",
-      about_us: "Sobre Nosotros",
-      about_description: "En Arepas & Más Corp, ofrecemos una variedad de alimentos colombianos de la más alta calidad. Nos dedicamos a traer los sabores auténticos de Colombia a cada mesa.",
-      contact_us: "Contáctanos",
-      contact_message: "Para pedidos, también puedes comunicarte al:",
-      contact_via_whatsapp: "Contacta vía WhatsApp",
-      contact_closing: "Gracias por preferirnos. ¡Esperamos llevar los sabores de Colombia para ti o tu negocio!",
-      contact_follow_up: "¿Quieres un sitio web como este? ¡Hablemos!",
-      developed_by: "Sitio Web desarrollado por Luis Emilio Rojas",
-      visit_counter_alt: "Contador de visitas para sitios web",
-      cart_title: "Tu Carrito",
-      empty_cart: "Tu carrito está vacío.",
-      proceed_checkout: "Proceder con el Checkout",
-      testimonials: "Lo que dicen nuestros clientes",
-      products: "Productos",
-      pack: "Paquete",
-      price: "Precio",
-      quantity: "Cantidad",
-      add_to_cart: "Añadir al Carrito",
-      added_to_cart: "añadido al carrito",
-      proceed_to_checkout: "Proceder al Checkout",
-      view_cart: "Ver Carrito",
-      testimonial_1: "Las arepas son deliciosas y me recuerdan a mi hogar en Colombia.",
-      testimonial_2: "Excelente calidad, especialmente los buñuelos y el pandeyuca.",
-      testimonial_3: "Servicio rápido y productos frescos. Altamente recomendado.",
-      customer_1: "María Rodríguez",
-      customer_2: "Juan Pérez",
-      customer_3: "Laura Gómez",
-      checkout_title: "Checkout",
-      empty_cart_message: "El carrito está vacío.",
-      invalid_email_message: "El correo electrónico es inválido.",
-      order_success_message: "Pedido enviado exitosamente.",
-      order_failure_message: "Error al enviar el pedido.",
-      order_summary: "Resumen del Pedido",
-      order_total: "Total del pedido",
-      name: "Nombre",
-      email: "Correo electrónico",
-      address: "Dirección",
-      phone: "Teléfono",
-      submit_order: "Enviar Pedido",
-      total: "Total",
-      remove: "Eliminar",
-      clear_cart: "Vaciar el Carrito",
-      far_but_not_flavors: "Lejos del país, pero no de sus sabores",
-      corn_arepas: "Arepas Hechas 100% de Maíz",
-      product_names: {
-        1: "Arepa Grande Simple",
-        2: "Arepa Pequeña Simple",
-        3: "Arepa de Choclo",
-        4: "Arepa de Queso",
-        5: "Deditos de Queso",
-        6: "Pandebono",
-        7: "Chorizo",
-        8: "Morcilla",
-        9: "Pandeyuca",
-        10: "Buñuelos",
-        11: "Empanadas",
-        12: "Papas Criollas",
-      },
-    },
-  },
-  en: {
-    translation: {
-      welcome: "Welcome to Arepas & Más!",
-      about_us: "About Us",
-      about_description: "At Arepas & Más Corp, we offer a variety of high-quality Colombian foods. We are dedicated to bringing the authentic flavors of Colombia to every table.",
-      contact_us: "Contact Us",
-      contact_message: "For orders, you can also reach us at:",
-      contact_via_whatsapp: "Contact via WhatsApp",
-      contact_closing: "Thank you for choosing us. We hope to bring the flavors of Colombia to you or your business!",
-      contact_follow_up: "Want a website like this? Let's talk!",
-      developed_by: "Website developed by Luis Emilio Rojas",
-      visit_counter_alt: "Visit counter for websites",
-      cart_title: "Your Cart",
-      empty_cart: "Your cart is empty.",
-      proceed_checkout: "Proceed to Checkout",
-      testimonials: "What Our Customers Say",
-      products: "Our Products",
-      pack: "Pack",
-      price: "Price",
-      quantity: "Quantity",
-      add_to_cart: "Add to Cart",
-      added_to_cart: "added to cart",
-      proceed_to_checkout: "Proceed to Checkout",
-      view_cart: "View Cart",
-      testimonial_1: "The arepas are delicious and remind me of my home in Colombia.",
-      testimonial_2: "Excellent quality, especially the buñuelos and pandeyuca.",
-      testimonial_3: "Fast service and fresh products. Highly recommended.",
-      customer_1: "Maria Rodriguez",
-      customer_2: "John Perez",
-      customer_3: "Laura Gomez",
-      checkout_title: "Checkout",
-      empty_cart_message: "Your cart is empty.",
-      invalid_email_message: "The email address is invalid.",
-      order_success_message: "Order sent successfully.",
-      order_failure_message: "Failed to send the order.",
-      order_summary: "Order Summary",
-      order_total: "Order Total",
-      name: "Name",
-      email: "Email",
-      address: "Address",
-      phone: "Phone",
-      submit_order: "Submit Order",
-      total: "Total",
-      remove: "Remove",
-      clear_cart: "Clear Cart",
-      far_but_not_flavors: "Far from home, but not from its flavors",
-      corn_arepas: "Arepas Made 100% of Corn",
-      product_names: {
-        1: "Large Plain Arepa",
-        2: "Small Plain Arepa",
-        3: "Chocolo Arepa",
-        4: "Cheese Arepa",
-        5: "Cheese Sticks",
-        6: "Pandebono",
-        7: "Chorizo",
-        8: "Morcilla",
-        9: "Pandeyuca",
-        10: "Buñuelos",
-        11: "Empanadas",
-        12: "Criolla Potatoes",
-      },
-    },
-  },
-};
+import Backend from 'i18next-http-backend';
 
 i18n
+  .use(Backend)
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
-    resources,
-    lng: 'es', // Establece el idioma inicial en español
-    fallbackLng: 'es', // Configura español como idioma predeterminado si no se detecta otro
+    fallbackLng: 'es',
+    supportedLngs: ['es', 'en'],
+    ns: ['translation'],
+    defaultNS: 'translation',
+    backend: {
+      // Funciona en dev (PUBLIC_URL vacío) y en GH Pages (/arepas-mas-corp)
+      loadPath: `${process.env.PUBLIC_URL || ''}/locales/{{lng}}/{{ns}}.json`
+    },
     detection: {
       order: ['querystring', 'cookie', 'localStorage', 'navigator', 'htmlTag', 'path', 'subdomain'],
-      caches: ['localStorage', 'cookie'], // Guarda el idioma preferido del usuario
+      caches: ['localStorage', 'cookie']
     },
-    interpolation: {
-      escapeValue: false, // React ya protege contra XSS
-    },
+    interpolation: { escapeValue: false },
+    react: { useSuspense: true }
   });
 
 export default i18n;

@@ -1,0 +1,7 @@
+[
+  { "id": 1, "pack": 10, "price": 7.50, "imageKey": "arepaPlainGrande" },
+  { "id": 2, "pack": 20, "price": 7.50, "imageKey": "arepaPlainPequena" },
+  { "id": 3, "pack": 5,  "price": 7.50, "imageKey": "arepaChocolo" },
+  { "id": 4, "pack": 5,  "price": 8.00, "imageKey": "arepaQueso" },
+  { "id": 5, "pack": 10, "price": 11.00, "imageKey": "deditosQueso" }
+]

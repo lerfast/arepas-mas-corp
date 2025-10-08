@@ -1,0 +1,2320 @@
+--------------------------------------------------------------------------------
+Ruta del archivo: /Users/luisrojas/Documents/GitHub/arepas-mas-corp2/src/reportWebVitals.js
+--------------------------------------------------------------------------------
+const reportWebVitals = onPerfEntry => {
+  if (onPerfEntry && onPerfEntry instanceof Function) {
+    import('web-vitals').then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
+      getCLS(onPerfEntry);
+      getFID(onPerfEntry);
+      getFCP(onPerfEntry);
+      getLCP(onPerfEntry);
+      getTTFB(onPerfEntry);
+    });
+  }
+};
+
+export default reportWebVitals;
+
+
+--------------------------------------------------------------------------------
+Ruta del archivo: /Users/luisrojas/Documents/GitHub/arepas-mas-corp2/src/App.css
+--------------------------------------------------------------------------------
+/* GENERAL */
+
+/* Previene el desbordamiento de cualquier elemento */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden; /* Previene el desbordamiento horizontal */
+}
+
+.App {
+  font-family: 'Poppins', sans-serif; /* Fuente moderna */
+  color: #333;
+  background-color: #f9f9f9;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3 {
+  color: #333;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #ebedef;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #f39c12;
+}
+
+/* HEADER */
+.app-header {
+  width: 100%;
+  height: 80vh;
+  background-image: url('./assets/hero-background.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  position: relative; /* Mantén este relativo para el contenido dentro del header */
+}
+
+/* Barra de navegación */
+.navbar {
+  position: fixed; /* Esto hace que el menú de navegación quede fijo */
+  top: 0;
+  width: 100%;
+  z-index: 1000; /* Asegura que el header esté siempre sobre otros elementos */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: rgba(0, 0, 0, 0.8); /* Fondo semi-transparente */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  overflow-x: hidden;
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+  margin-left: 30px;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  overflow-x: hidden; /* Evita desbordamiento horizontal en el menú */
+}
+
+.menu li {
+  font-size: 1.2rem;
+}
+
+.hero-content {
+  margin-top: -20px; /* Cambiamos de -50px a -20px para acercarlo más */
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.hero-content h1 {
+  font-size: 5rem; /* Aumenta el tamaño para hacer el texto más imponente */
+  margin-bottom: 20px;
+  color: #fff; /* Mantén el color blanco para mayor contraste */
+  text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.7); /* Sombra de texto más fuerte */
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  color: #fff; /* El texto también será blanco para contrastar */
+  margin-bottom: 20px;
+}
+
+.cta-button {
+  background-color: #f39c12;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  margin-top: 20px;
+  transition: background 0.3s ease;
+  text-transform: uppercase;
+}
+
+.cta-button:hover {
+  background-color: #d35400;
+}
+
+/* HAMBURGER MENU */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  margin-right: 20px; /* Mueve el icono de hamburguesa hacia la izquierda */
+}
+
+.hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 4px 0;
+}
+
+/* MOBILE MENU (CERRADO) */
+.menu {
+  transition: transform 0.3s ease-in-out;
+}
+
+.menu.open {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 18px;
+  right: 111px;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 10px;
+  border-radius: 10px;
+  transform: translateY(0);
+  width: auto;
+  max-width: calc(100% - 40px); /* Asegura que el menú no se desborde del viewport */
+}
+
+.menu li {
+  margin-bottom: 10px;
+}
+
+/* SOBRE NOSOTROS */
+.about-us {
+  display: flex;
+  flex-direction: column; /* Cambiamos la dirección de los elementos a columna */
+  align-items: center; /* Centramos los elementos horizontalmente */
+  text-align: center; /* Centramos el texto */
+  padding: 50px;
+  background-color: #fff;
+}
+
+.about-text {
+  max-width: 800px; /* Limita el ancho para una mejor legibilidad */
+  margin: 0 auto; /* Centra el contenido en el medio */
+}
+
+.about-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.about-text .cta-button {
+  background-color: #007bff;
+}
+
+.about-text .cta-button:hover {
+  background-color: #0056b3;
+}
+
+/* PRODUCTOS */
+.products-section {
+  background-color: #f5f5f5;
+  padding: 50px;
+  text-align: center;
+}
+
+.products-section h2 {
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+}
+
+.carousel-container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+section {
+  overflow-x: hidden;
+}
+
+/* TESTIMONIOS */
+.testimonials-section {
+  padding: 50px;
+  background-color: #007bff;
+  color: white;
+  text-align: center; /* Centramos el título */
+}
+
+.testimonials-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+.testimonials {
+  display: flex;
+  justify-content: space-around;
+}
+
+.testimonial {
+  text-align: center;
+  max-width: 300px;
+}
+
+.testimonial img {
+  border-radius: 50%;
+  margin-bottom: 20px;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.testimonial p {
+  font-style: italic;
+}
+
+.testimonial span {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* CONTACTO */
+.contact-section {
+  background-color: #333;
+  color: white;
+  padding: 50px;
+  text-align: center;
+  position: relative; /* Asegura que el footer esté bien colocado */
+  bottom: 0;
+  width: 100%;
+}
+
+.contact-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.social-media {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.social-icon {
+  background-color: #afb2b5;
+  color: white;
+  padding: 10px;
+  border-radius: 50px;
+  transition: background 0.3s ease;
+}
+
+.social-icon:hover {
+  background-color: #f39c12;
+}
+
+/* Estilo para el ícono de WhatsApp, LinkedIn y GitHub */
+.whatsapp-link,
+.linkedin-link,
+.github-link {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+/* Colores originales de los íconos */
+.whatsapp-icon {
+  color: #25D366; /* Verde WhatsApp */
+  font-size: 24px; /* Ajusta el tamaño del ícono */
+  margin-right: -5px; /* Espacio entre el ícono y el número */
+  margin-left: 10px;
+}
+
+.linkedin-icon {
+  color: #0077B5; /* Azul LinkedIn */
+  font-size: 24px; /* Ajusta el tamaño del ícono */
+  
+}
+
+.github-icon {
+  color: #e8e5e5; /* Negro GitHub */
+  font-size: 24px; /* Ajusta el tamaño del ícono */
+  margin-right: 10px;
+}
+
+/* Hover states para los íconos */
+.whatsapp-link:hover .whatsapp-icon {
+  color: #128C7E; /* Verde más oscuro para WhatsApp en hover */
+}
+
+.linkedin-link:hover .linkedin-icon {
+  color: #005582; /* Azul más oscuro para LinkedIn en hover */
+}
+
+.github-link:hover .github-icon {
+  color: #a8a3a3; /* Negro más oscuro para GitHub en hover */
+}
+
+
+.icon-link {
+  display: inline-flex; /* Alinea los íconos con el texto */
+  align-items: center; /* Alineación vertical centrada */
+  margin-right: 10px; /* Espacio entre los íconos */
+  font-size: 24px; /* Tamaño consistente para todos los íconos */
+}
+
+/* Asegura que todos los íconos tengan el mismo tamaño */
+.icon {
+  font-size: 24px;
+  vertical-align: middle; /* Alineación vertical */
+}
+/* MEDIA QUERIES - RESPONSIVE DESIGN */
+
+/* Para pantallas de tablets (anchura máxima de 1024px) */
+@media (max-width: 1024px) {
+  .hero-content {
+    margin-top: 60px; /* Elimina el margen negativo en móviles */
+    padding: 15px; /* Reduce un poco el padding en móviles */
+  }
+
+  .logo {
+    width: 130px;
+    height: auto;
+    margin-left: -12px;
+}
+
+  .menu {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .about-us {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-text {
+    max-width: 90%;
+  }
+
+  .testimonials {
+    flex-direction: column; /* Cambia a disposición en columna */
+    align-items: center; /* Alinea los elementos en el centro */
+  }
+
+  .testimonial {
+    margin-bottom: 20px; /* Añade espacio entre testimonios */
+  }
+
+  .testimonial img {
+    width: 80px; /* Reduce el tamaño de las imágenes */
+    height: 80px;
+  }
+
+  .hero-content h1 {
+    font-size: 3.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1.5rem;
+  }
+
+  .cta-button {
+    font-size: 1rem;
+    padding: 8px 16px;
+  }
+}
+
+/* Para pantallas de móviles (anchura máxima de 600px) */
+@media (max-width: 600px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .cta-button {
+    font-size: 1rem;
+    padding: 8px 16px;
+  }
+
+  .about-us {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-text {
+    max-width: 90%;
+  }
+
+  .testimonials {
+    flex-direction: column;
+  }
+
+  .testimonial img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .contact-section h2 {
+    font-size: 2rem;
+  }
+
+  /* Mostrar el menú hamburguesa en móviles */
+  .hamburger {
+    display: flex;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .menu.open {
+    display: flex;
+  }
+  .testimonials-section h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+  
+}
+
+
+--------------------------------------------------------------------------------
+Ruta del archivo: /Users/luisrojas/Documents/GitHub/arepas-mas-corp2/src/index.js
+--------------------------------------------------------------------------------
+// src/index.js
+import React, { Suspense } from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import './i18n';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <Suspense fallback={<div>Loading…</div>}>
+      <App />
+    </Suspense>
+  </React.StrictMode>
+);
+
+
+--------------------------------------------------------------------------------
+Ruta del archivo: /Users/luisrojas/Documents/GitHub/arepas-mas-corp2/src/index.css
+--------------------------------------------------------------------------------
+/* src/index.css */
+
+/* GENERAL */
+
+/* Previene el desbordamiento de cualquier elemento */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden; /* Previene el desbordamiento horizontal */
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  background-color: #f9f9f9;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  color: #333;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #ebedef;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #f39c12;
+}
+
+/* MEDIA QUERIES - RESPONSIVE DESIGN */
+
+/* Para pantallas de tablets (anchura máxima de 1024px) */
+@media (max-width: 1024px) {
+  .hero-content {
+    margin-top: 60px; /* Elimina el margen negativo en móviles */
+    padding: 15px; /* Reduce un poco el padding en móviles */
+  }
+
+  .logo {
+    width: 130px;
+    height: auto;
+    margin-left: -12px;
+  }
+
+  .menu {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .about-us {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-text {
+    max-width: 90%;
+  }
+
+  .testimonials {
+    flex-direction: column; /* Cambia a disposición en columna */
+    align-items: center; /* Alinea los elementos en el centro */
+  }
+
+  .testimonial {
+    margin-bottom: 20px; /* Añade espacio entre testimonios */
+  }
+
+  .testimonial img {
+    width: 80px; /* Reduce el tamaño de las imágenes */
+    height: 80px;
+  }
+
+  .hero-content h1 {
+    font-size: 3.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1.5rem;
+  }
+
+  .cta-button {
+    font-size: 1rem;
+    padding: 8px 16px;
+  }
+}
+
+/* Para pantallas de móviles (anchura máxima de 600px) */
+@media (max-width: 600px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .cta-button {
+    font-size: 1rem;
+    padding: 8px 16px;
+  }
+
+  .about-us {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-text {
+    max-width: 90%;
+  }
+
+  .testimonials {
+    flex-direction: column;
+  }
+
+  .testimonial img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .contact-section h2 {
+    font-size: 2rem;
+  }
+
+  /* Mostrar el menú hamburguesa en móviles */
+  .hamburger {
+    display: flex;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .menu.open {
+    display: flex;
+  }
+
+  .testimonials-section h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+}
+
+
+--------------------------------------------------------------------------------
+Ruta del archivo: /Users/luisrojas/Documents/GitHub/arepas-mas-corp2/src/App.test.js
+--------------------------------------------------------------------------------
+import { render, screen } from '@testing-library/react';
+import App from './App';
+
+test('renders learn react link', () => {
+  render(<App />);
+  const linkElement = screen.getByText(/learn react/i);
+  expect(linkElement).toBeInTheDocument();
+});
+
+
+--------------------------------------------------------------------------------
+Ruta del archivo: /Users/luisrojas/Documents/GitHub/arepas-mas-corp2/src/setupTests.js
+--------------------------------------------------------------------------------
+// jest-dom adds custom jest matchers for asserting on DOM nodes.
+// allows you to do things like:
+// expect(element).toHaveTextContent(/react/i)
+// learn more: https://github.com/testing-library/jest-dom
+import '@testing-library/jest-dom';
+
+
+--------------------------------------------------------------------------------
+Ruta del archivo: /Users/luisrojas/Documents/GitHub/arepas-mas-corp2/src/i18n.js
+--------------------------------------------------------------------------------
+// src/i18n.js
+import i18n from 'i18next';
+import { initReactI18next } from 'react-i18next';
+import LanguageDetector from 'i18next-browser-languagedetector';
+import Backend from 'i18next-http-backend';
+
+i18n
+  .use(Backend)
+  .use(LanguageDetector)
+  .use(initReactI18next)
+  .init({
+    fallbackLng: 'es',
+    supportedLngs: ['es', 'en'],
+    ns: ['translation'],
+    defaultNS: 'translation',
+    backend: {
+      // Funciona en dev (PUBLIC_URL vacío) y en GH Pages (/arepas-mas-corp)
+      loadPath: `${process.env.PUBLIC_URL || ''}/locales/{{lng}}/{{ns}}.json`
+    },
+    detection: {
+      order: ['querystring', 'cookie', 'localStorage', 'navigator', 'htmlTag', 'path', 'subdomain'],
+      caches: ['localStorage', 'cookie']
+    },
+    interpolation: { escapeValue: false },
+    react: { useSuspense: true }
+  });
+
+export default i18n;
+
+
+--------------------------------------------------------------------------------
+Ruta del archivo: /Users/luisrojas/Documents/GitHub/arepas-mas-corp2/src/App.js
+--------------------------------------------------------------------------------
+// src/App.js
+import React, { Suspense } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { CartProvider } from './context/CartContext';
+
+import HomePage from './components/home/HomePage';
+import Cart from './components/cart/Cart';
+import Checkout from './components/checkout/Checkout';
+
+function App() {
+  return (
+    <CartProvider>
+      <Router basename="/arepas-mas-corp">
+        <div className="App">
+          <Suspense fallback={<div>Loading…</div>}>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/cart" element={<Cart />} />
+              <Route path="/checkout" element={<Checkout />} />
+            </Routes>
+          </Suspense>
+        </div>
+      </Router>
+    </CartProvider>
+  );
+}
+
+export default App;
+
+
+--------------------------------------------------------------------------------
+Ruta del archivo: /Users/luisrojas/Documents/GitHub/arepas-mas-corp2/src/context/CartContext.jsx
+--------------------------------------------------------------------------------
+// src/context/CartContext.js
+import React, { createContext, useState } from 'react';
+
+export const CartContext = createContext();
+
+export const CartProvider = ({ children }) => {
+  const [cart, setCart] = useState([]);
+
+  const addToCart = (product, quantity) => {
+    const existingProduct = cart.find((item) => item.id === product.id);
+    if (existingProduct) {
+      setCart(
+        cart.map((item) =>
+          item.id === product.id ? { ...item, quantity: item.quantity + quantity } : item
+        )
+      );
+    } else {
+      setCart([...cart, { ...product, quantity }]);
+    }
+  };
+
+  const updateQuantity = (productId, quantity) => {
+    setCart(
+      cart.map((item) =>
+        item.id === productId ? { ...item, quantity } : item
+      )
+    );
+  };
+
+  const removeFromCart = (productId) => {
+    setCart(cart.filter((item) => item.id !== productId));
+  };
+
+  const clearCart = () => {
+    setCart([]);
+  };
+
+  const getTotal = () => {
+    return cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
+  };
+
+  return (
+    <CartContext.Provider
+      value={{
+        cart,
+        addToCart,
+        updateQuantity,
+        removeFromCart,
+        clearCart,
+        getTotal,
+      }}
+    >
+      {children}
+    </CartContext.Provider>
+  );
+};
+
+
+--------------------------------------------------------------------------------
+Ruta del archivo: /Users/luisrojas/Documents/GitHub/arepas-mas-corp2/src/utils/formatCurrency.js
+--------------------------------------------------------------------------------
+// src/utils/formatCurrency.js
+export default function formatCurrency(value, locale) {
+  const lang = locale?.startsWith('en') ? 'en-US' : 'es-CO';
+  // Ajusta la moneda si quieres COP en ES:
+  const currency = 'USD';
+  return new Intl.NumberFormat(lang, {
+    style: 'currency',
+    currency,
+    minimumFractionDigits: 2
+  }).format(value || 0);
+}
+
+
+--------------------------------------------------------------------------------
+Ruta del archivo: /Users/luisrojas/Documents/GitHub/arepas-mas-corp2/src/components/LanguageToggle.jsx
+--------------------------------------------------------------------------------
+// src/components/LanguageToggle.jsx
+import React from 'react';
+import { useTranslation } from 'react-i18next';
+
+const LanguageToggle = () => {
+  const { i18n } = useTranslation();
+
+  const setLang = (lng) => {
+    i18n.changeLanguage(lng);
+    // i18next-browser-languagedetector ya guarda en localStorage / cookie
+  };
+
+  const current = i18n.language?.startsWith('en') ? 'en' : 'es';
+
+  return (
+    <div className="language-switch" role="group" aria-label="Language switch">
+      <button
+        className={`lang-btn ${current === 'es' ? 'active' : ''}`}
+        onClick={() => setLang('es')}
+        aria-pressed={current === 'es'}
+      >
+        🇨🇴 ES
+      </button>
+      <button
+        className={`lang-btn ${current === 'en' ? 'active' : ''}`}
+        onClick={() => setLang('en')}
+        aria-pressed={current === 'en'}
+      >
+        🇺🇸 EN
+      </button>
+    </div>
+  );
+};
+
+export default LanguageToggle;
+
+
+--------------------------------------------------------------------------------
+Ruta del archivo: /Users/luisrojas/Documents/GitHub/arepas-mas-corp2/src/components/home/TestimonialsSection.jsx
+--------------------------------------------------------------------------------
+// src/components/home/TestimonialsSection.jsx
+import React from 'react';
+import { useTranslation } from 'react-i18next';
+import woman1 from '../../assets/mujer1.jpg';
+import woman2 from '../../assets/mujer2.jpg';
+import man from '../../assets/hombre.jpg';
+import './TestimonialsSection.css';
+
+const TestimonialsSection = () => {
+  const { t } = useTranslation();
+
+  return (
+    <section id="testimonials" className="testimonials-section" data-aos="fade-up">
+      <h2 data-aos="zoom-in">{t('testimonials')}</h2>
+      <div className="testimonials">
+        <div className="testimonial" data-aos="flip-left" data-aos-delay="100">
+          <img src={woman1} alt={t('customer_1')} loading="lazy" />
+          <p>{t('testimonial_1')}</p>
+          <span>- {t('customer_1')}</span>
+        </div>
+        <div className="testimonial" data-aos="flip-left" data-aos-delay="200">
+          <img src={man} alt={t('customer_2')} loading="lazy" />
+          <p>{t('testimonial_2')}</p>
+          <span>- {t('customer_2')}</span>
+        </div>
+        <div className="testimonial" data-aos="flip-left" data-aos-delay="300">
+          <img src={woman2} alt={t('customer_3')} loading="lazy" />
+          <p>{t('testimonial_3')}</p>
+          <span>- {t('customer_3')}</span>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default TestimonialsSection;
+
+
+--------------------------------------------------------------------------------
+Ruta del archivo: /Users/luisrojas/Documents/GitHub/arepas-mas-corp2/src/components/home/HomePage.jsx
+--------------------------------------------------------------------------------
+// src/components/home/HomePage.jsx
+import React, { useEffect } from 'react';
+import Header from '../common/Header';
+import AboutUs from './AboutUs';
+import ProductCarousel from './ProductCarousel';
+import TestimonialsSection from './TestimonialsSection';
+import Footer from '../common/Footer';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+const HomePage = () => {
+  useEffect(() => {
+    AOS.init({ duration: 800, easing: 'ease-in-out', once: true, offset: 10 });
+    AOS.refresh();
+  }, []);
+
+  return (
+    <>
+      <Header />
+      <AboutUs />
+      <ProductCarousel />
+      <TestimonialsSection />
+      <Footer />
+    </>
+  );
+};
+
+export default HomePage;
+
+
+--------------------------------------------------------------------------------
+Ruta del archivo: /Users/luisrojas/Documents/GitHub/arepas-mas-corp2/src/components/home/AboutUs.css
+--------------------------------------------------------------------------------
+/* src/components/AboutUs.css */
+
+/* SOBRE NOSOTROS */
+.about-us {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 50px;
+    background-color: #fff;
+  }
+  
+  .about-text {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .about-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .about-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  .about-text .cta-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    transition: background 0.3s ease;
+  }
+  
+  .about-text .cta-button:hover {
+    background-color: #0056b3;
+  }
+  
+
+--------------------------------------------------------------------------------
+Ruta del archivo: /Users/luisrojas/Documents/GitHub/arepas-mas-corp2/src/components/home/ProductCarousel.css
+--------------------------------------------------------------------------------
+/* src/components/ProductCarousel.css */
+
+.carousel-container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.carousel-container h2 {
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+}
+
+.product-card {
+  text-align: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+  margin-bottom: 20px;
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.product-card h3 {
+  margin: 10px 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.product-card p {
+  font-size: 1rem;
+  color: #777;
+}
+
+.product-card .pack {
+  display: block;
+  font-size: 1rem;
+  color: #555;
+  margin-top: 5px;
+}
+
+.product-card .price {
+  display: block;
+  font-size: 1.2rem;
+  color: #e74c3c;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.quantity-selector {
+  margin-top: 10px;
+}
+
+.quantity-selector input {
+  width: 60px;
+  padding: 8px;
+  margin-left: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.product-card button {
+  background-color: #f39c12;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin-top: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.product-card button:hover {
+  background-color: #e67e22;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: black;
+}
+
+.confirmation-message {
+  background-color: #27ae60;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.proceed-checkout {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.checkout-button,
+.view-cart-button {
+  background-color: #3498db;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 0.9rem;
+  flex: 1;
+}
+
+.checkout-button:hover,
+.view-cart-button:hover {
+  background-color: #2980b9;
+}
+
+.view-cart-button {
+  background-color: #2ecc71;
+}
+
+.view-cart-button:hover {
+  background-color: #27ae60;
+}
+
+/* Estilos para pantallas móviles */
+@media (max-width: 768px) {
+  .proceed-checkout {
+    flex-direction: column;
+  }
+
+  .product-card button {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .checkout-button,
+  .view-cart-button {
+    width: 100%;
+    padding: 12px;
+  }
+}
+
+
+--------------------------------------------------------------------------------
+Ruta del archivo: /Users/luisrojas/Documents/GitHub/arepas-mas-corp2/src/components/home/AboutUs.jsx
+--------------------------------------------------------------------------------
+// src/components/home/AboutUs.jsx
+import React from 'react';
+import { useTranslation } from 'react-i18next';
+import './AboutUs.css';
+
+const AboutUs = () => {
+  const { t } = useTranslation();
+
+  return (
+    <section id="about" className="about-us">
+      <div className="about-content">
+        <div className="about-text">
+          <h2 data-aos="fade-right">{t('about_us')}</h2>
+          <p data-aos="fade-left" data-aos-delay="100">{t('about_description')}</p>
+          <a href="#contact" className="cta-button" data-aos="fade-up" data-aos-delay="200">
+            {t('contact_us')}
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default AboutUs;
+
+
+--------------------------------------------------------------------------------
+Ruta del archivo: /Users/luisrojas/Documents/GitHub/arepas-mas-corp2/src/components/home/ProductCarousel.jsx
+--------------------------------------------------------------------------------
+// src/components/home/ProductCarousel.jsx
+import React, { useContext, useState } from 'react';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import './ProductCarousel.css';
+import { CartContext } from '../../context/CartContext';
+import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import formatCurrency from '../../utils/formatCurrency';
+
+// Images
+import arepaPlainGrande from '../../assets/arepa_plain_grande.jpg';
+import arepaPlainPequena from '../../assets/arepa_plain_pequena.jpg';
+import arepaChocolo from '../../assets/arepa_chocolo.jpg';
+import arepaQueso from '../../assets/arepa_queso.jpg';
+import deditosQueso from '../../assets/deditos_queso.jpg';
+
+const productsData = {
+  es: [
+    { id: 1, name: 'Arepa Plain Grande', description: 'Paquete de 10 unidades - Producto prehorneado', pack: '10', price: 7.50, image: arepaPlainGrande },
+    { id: 2, name: 'Arepa Plain Pequeña', description: 'Paquete de 20 unidades - Producto prehorneado', pack: '20', price: 7.50, image: arepaPlainPequena },
+    { id: 3, name: 'Arepa de Choclo', description: 'Paquete de 5 unidades - Producto prehorneado', pack: '5', price: 7.50, image: arepaChocolo },
+    { id: 4, name: 'Arepa de Queso', description: 'Paquete de 5 unidades - Producto prehorneado', pack: '5', price: 8.00, image: arepaQueso },
+    { id: 5, name: 'Tequeño de Queso', description: 'Paquete de 10 unidades - Producto prehorneado', pack: '10', price: 11.00, image: deditosQueso },
+  ],
+  en: [
+    { id: 1, name: 'Large Plain Arepa', description: 'Pack of 10 units - Pre-baked product', pack: '10', price: 7.50, image: arepaPlainGrande },
+    { id: 2, name: 'Small Plain Arepa', description: 'Pack of 20 units - Pre-baked product', pack: '20', price: 7.50, image: arepaPlainPequena },
+    { id: 3, name: 'Choclo Arepa', description: 'Pack of 5 units - Pre-baked product', pack: '5', price: 7.50, image: arepaChocolo },
+    { id: 4, name: 'Cheese Arepa', description: 'Pack of 5 units - Pre-baked product', pack: '5', price: 8.00, image: arepaQueso },
+    { id: 5, name: 'Cheese Fingers', description: 'Pack of 10 units - Pre-baked product', pack: '10', price: 11.00, image: deditosQueso },
+  ],
+};
+
+const ProductCarousel = () => {
+  const { t, i18n } = useTranslation();
+  const language = i18n.language?.startsWith('en') ? 'en' : 'es';
+  const products = productsData[language] || productsData.es;
+  const { addToCart, cart } = useContext(CartContext);
+  const [quantities, setQuantities] = useState({});
+  const [confirmationMessage, setConfirmationMessage] = useState(null);
+
+  const format = (value) => formatCurrency(value, i18n.language, 'USD');
+
+  const handleQuantityChange = (productId, quantity) => {
+    setQuantities((prev) => ({ ...prev, [productId]: quantity }));
+  };
+
+  const handleAddToCart = (product, quantity) => {
+    addToCart(product, quantity);
+    setConfirmationMessage(`${quantity} ${product.name} ${t('added_to_cart')}`);
+    setTimeout(() => setConfirmationMessage(null), 3000);
+  };
+
+  const settings = {
+    dots: true, infinite: true, speed: 500,
+    slidesToShow: 3, slidesToScroll: 1,
+    responsive: [
+      { breakpoint: 1024, settings: { slidesToShow: 2, slidesToScroll: 1, infinite: true, dots: true } },
+      { breakpoint: 600,  settings: { slidesToShow: 1, slidesToScroll: 1 } },
+    ],
+  };
+
+  return (
+    <div id="products" className="carousel-container">
+      <h2 style={{ paddingTop: '80px' }}>{t('products')}</h2>
+      {confirmationMessage && <div className="confirmation-message">{confirmationMessage}</div>}
+
+      <Slider {...settings}>
+        {products.map((product) => (
+          <div key={product.id} className="product-card">
+            <img src={product.image} alt={product.name} loading="lazy" />
+            <h3>{product.name}</h3>
+            <p>{product.description}</p>
+            <span className="pack">{t('pack')}: {product.pack}</span>
+            <span className="price">{t('price')}: {format(product.price)}</span>
+
+            <div className="quantity-selector">
+              <label>{t('quantity')}:</label>
+              <input
+                type="number"
+                min="1"
+                value={quantities[product.id] || 1}
+                onChange={(e) => handleQuantityChange(product.id, parseInt(e.target.value) || 1)}
+              />
+            </div>
+
+            <button onClick={() => handleAddToCart(product, quantities[product.id] || 1)}>
+              {t('add_to_cart')}
+            </button>
+
+            {cart.length > 0 && (
+              <div className="proceed-checkout">
+                <Link to="/checkout"><button className="checkout-button">{t('proceed_to_checkout')}</button></Link>
+                <Link to="/cart"><button className="view-cart-button">{t('view_cart')}</button></Link>
+              </div>
+            )}
+          </div>
+        ))}
+      </Slider>
+    </div>
+  );
+};
+
+export default ProductCarousel;
+
+
+--------------------------------------------------------------------------------
+Ruta del archivo: /Users/luisrojas/Documents/GitHub/arepas-mas-corp2/src/components/home/TestimonialsSection.css
+--------------------------------------------------------------------------------
+/* src/components/TestimonialsSection.css */
+
+/* TESTIMONIOS */
+.testimonials-section {
+    padding: 50px;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+  }
+  
+  .testimonials-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+  }
+  
+  .testimonials {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .testimonial {
+    text-align: center;
+    max-width: 300px;
+  }
+  
+  .testimonial img {
+    border-radius: 50%;
+    margin-bottom: 20px;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+  }
+  
+  .testimonial p {
+    font-style: italic;
+  }
+  
+  .testimonial span {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  /* MEDIA QUERIES */
+  @media (max-width: 1024px) {
+    .testimonials {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .testimonial {
+      margin-bottom: 20px;
+    }
+  
+    .testimonial img {
+      width: 80px;
+      height: 80px;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .testimonials-section h2 {
+      font-size: 2rem;
+      margin-bottom: 40px;
+    }
+  }
+  
+
+--------------------------------------------------------------------------------
+Ruta del archivo: /Users/luisrojas/Documents/GitHub/arepas-mas-corp2/src/components/checkout/Checkout.css
+--------------------------------------------------------------------------------
+/* src/components/Checkout.css */
+
+.checkout-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .checkout-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .message {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #27ae60;
+    margin-bottom: 20px;
+  }
+  
+  .empty-cart {
+    text-align: center;
+    color: #e74c3c;
+    font-size: 1.2rem;
+  }
+  
+  .order-summary {
+    margin-bottom: 20px;
+  }
+  
+  .order-summary h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .order-summary ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .order-summary li {
+    background-color: #fff;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  .order-total {
+    text-align: right;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  .checkout-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .submit-button {
+    background-color: #3498db;
+    color: white;
+    padding: 12px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .submit-button:hover {
+    background-color: #2980b9;
+  }
+  
+
+--------------------------------------------------------------------------------
+Ruta del archivo: /Users/luisrojas/Documents/GitHub/arepas-mas-corp2/src/components/checkout/Checkout.jsx
+--------------------------------------------------------------------------------
+// src/components/checkout/Checkout.jsx
+import React, { useState, useContext } from 'react';
+import emailjs from 'emailjs-com';
+import { CartContext } from '../../context/CartContext';
+import { useTranslation } from 'react-i18next';
+import './Checkout.css';
+import formatCurrency from '../../utils/formatCurrency';
+
+const Checkout = () => {
+  const { t, i18n } = useTranslation();
+  const { cart, clearCart, getTotal } = useContext(CartContext);
+  const [formData, setFormData] = useState({ name: '', email: '', address: '', phone: '' });
+  const [message, setMessage] = useState('');
+
+  const format = (value) => formatCurrency(value, i18n.language, 'USD');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (cart.length === 0) {
+      setMessage(t('empty_cart_message'));
+      return;
+    }
+
+    if (!formData.email || !formData.email.includes('@') || formData.email.includes(' ')) {
+      setMessage(t('invalid_email_message'));
+      return;
+    }
+
+    const orderDetails = cart
+      .map((item) => `${t(`product_names.${item.id}`) || item.name} (${t('quantity')}: ${item.quantity})`)
+      .join(', ');
+
+    const templateParams = {
+      name: formData.name,
+      email: formData.email,
+      address: formData.address,
+      phone: formData.phone,
+      order: orderDetails,
+      total: format(getTotal())
+    };
+
+    emailjs
+      .send('service_k45d4h9', 'template_5ec7k58', templateParams, 'R5r9h5kY8r9zgVUJJ')
+      .then(
+        () => {
+          setMessage(t('order_success_message'));
+          clearCart();
+        },
+        () => setMessage(t('order_failure_message'))
+      );
+  };
+
+  const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value });
+
+  return (
+    <div className="checkout-container" data-aos="fade-up">
+      <h2>{t('checkout_title')}</h2>
+      {message && <p className="message">{message}</p>}
+
+      {cart.length === 0 ? (
+        <p className="empty-cart">{t('empty_cart')}</p>
+      ) : (
+        <>
+          <div className="order-summary">
+            <h3>{t('order_summary')}</h3>
+            <ul>
+              {cart.map((item) => (
+                <li key={item.id}>
+                  {t(`product_names.${item.id}`) || item.name}
+                  {' — '}
+                  {t('quantity')}: {item.quantity}
+                  {' — '}
+                  {t('price')}: {format(item.price)}
+                  {' — '}
+                  {t('total')}: {format(item.price * item.quantity)}
+                </li>
+              ))}
+            </ul>
+            <div className="order-total">
+              <strong>{t('order_total')}: {format(getTotal())}</strong>
+            </div>
+          </div>
+
+          <form onSubmit={handleSubmit} className="checkout-form">
+            <div className="form-group">
+              <label>{t('name')}:</label>
+              <input type="text" name="name" value={formData.name} onChange={handleChange} required />
+            </div>
+            <div className="form-group">
+              <label>{t('email')}:</label>
+              <input type="email" name="email" value={formData.email} onChange={handleChange} required />
+            </div>
+            <div className="form-group">
+              <label>{t('address')}:</label>
+              <input type="text" name="address" value={formData.address} onChange={handleChange} required />
+            </div>
+            <div className="form-group">
+              <label>{t('phone')}:</label>
+              <input type="text" name="phone" value={formData.phone} onChange={handleChange} required />
+            </div>
+            <button type="submit" className="submit-button">{t('submit_order')}</button>
+          </form>
+        </>
+      )}
+    </div>
+  );
+};
+
+export default Checkout;
+
+
+--------------------------------------------------------------------------------
+Ruta del archivo: /Users/luisrojas/Documents/GitHub/arepas-mas-corp2/src/components/common/Header.jsx
+--------------------------------------------------------------------------------
+// src/components/common/Header.jsx
+import React, { useState, useContext } from 'react';
+import { Link } from 'react-router-dom';
+import { CartContext } from '../../context/CartContext';
+import { useTranslation } from 'react-i18next';
+import logo from '../../assets/logo.png';
+import heroBackground from '../../assets/hero-background.jpg';
+import './Header.css';
+
+const Header = () => {
+  const [isMenuOpen, setMenuOpen] = useState(false);
+  const { cart } = useContext(CartContext);
+  const { t, i18n } = useTranslation();
+  const itemCount = cart.reduce((acc, item) => acc + item.quantity, 0);
+
+  const toggleMenu = () => setMenuOpen(!isMenuOpen);
+  const closeMenu = () => setMenuOpen(false);
+  const changeLanguage = (lng) => i18n.changeLanguage(lng);
+
+  return (
+    <header
+      className="app-header"
+      style={{ backgroundImage: `url(${heroBackground})` }}
+    >
+      <nav className="navbar" aria-label="Main navigation">
+        <div className="logo-container">
+          <img src={logo} alt="Arepas & Más Corp" className="logo" />
+          <p className="logo-subtitle">{t('far_but_not_flavors')}</p>
+        </div>
+
+        <ul className={`menu ${isMenuOpen ? 'open' : ''}`} id="main-menu">
+          <li><a href="#about" onClick={closeMenu}>{t('about_us')}</a></li>
+          <li><a href="#products" onClick={closeMenu}>{t('products')}</a></li>
+          <li><a href="#testimonials" onClick={closeMenu}>{t('testimonials')}</a></li>
+          <li><a href="#contact" onClick={closeMenu}>{t('contact_us')}</a></li>
+          <li>
+            <Link to="/cart" onClick={closeMenu}>
+              {t('cart_title')} {itemCount > 0 && `(${itemCount})`}
+            </Link>
+          </li>
+        </ul>
+
+        <div className="language-switch" role="group" aria-label="Language switch">
+          <button onClick={() => changeLanguage('es')} aria-pressed={i18n.language?.startsWith('es')}>ES</button>
+          <button onClick={() => changeLanguage('en')} aria-pressed={i18n.language?.startsWith('en')}>EN</button>
+        </div>
+
+        <div
+          className="hamburger"
+          onClick={toggleMenu}
+          role="button"
+          aria-label="Open menu"
+          aria-controls="main-menu"
+          aria-expanded={isMenuOpen}
+          tabIndex={0}
+        >
+          <div className="bar" />
+          <div className="bar" />
+          <div className="bar" />
+        </div>
+      </nav>
+
+      <div className="hero-content" data-aos="fade-down">
+        <h1 data-aos="zoom-in" data-aos-delay="200">Arepas & Más Corp</h1>
+        <p data-aos="fade-up" data-aos-delay="300">{t('welcome')}</p>
+        <p className="sub-header" data-aos="fade-up" data-aos-delay="400">
+          {t('corn_arepas')}
+        </p>
+        <a href="#products" className="cta-button" data-aos="zoom-in" data-aos-delay="500">
+          {t('products')}
+        </a>
+      </div>
+    </header>
+  );
+};
+
+export default Header;
+
+
+--------------------------------------------------------------------------------
+Ruta del archivo: /Users/luisrojas/Documents/GitHub/arepas-mas-corp2/src/components/common/Footer.jsx
+--------------------------------------------------------------------------------
+// src/components/Footer.js
+import React from 'react';
+import { useTranslation } from 'react-i18next'; // Hook para traducción
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faWhatsapp, faFacebook, faInstagram, faXTwitter, faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
+import './Footer.css';
+
+const Footer = () => {
+  const { t } = useTranslation(); // Hook de traducción
+
+  return (
+    <footer id="contact" className="contact-section" data-aos="fade-up">
+      <h2>{t('contact_us')}</h2>
+      <p data-aos="fade-up" data-aos-delay="100">
+        {t('contact_message')} 
+        <a
+          href="https://wa.me/17865437061"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="whatsapp-link"
+          aria-label={t('contact_via_whatsapp')}
+        >
+          <FontAwesomeIcon icon={faWhatsapp} className="whatsapp-icon" />
+        </a>
+        <strong>+1(786)-543-7061</strong>
+      </p>
+      <p data-aos="fade-up" data-aos-delay="200">
+        {t('contact_closing')} <br />
+        {t('developed_by')} <strong></strong>. <br />
+        {t('contact_follow_up')}
+        <a href="https://wa.me/573187757620" target="_blank" rel="noopener noreferrer" className="icon-link whatsapp-link">
+          <FontAwesomeIcon icon={faWhatsapp} className="icon whatsapp-icon" />
+        </a>
+        <a href="https://www.linkedin.com/in/luisemiliorojas/" target="_blank" rel="noopener noreferrer" className="icon-link linkedin-link">
+          <FontAwesomeIcon icon={faLinkedin} className="icon linkedin-icon" />
+        </a>
+        <a href="https://github.com/lerfast" target="_blank" rel="noopener noreferrer" className="icon-link github-link">
+          <FontAwesomeIcon icon={faGithub} className="icon github-icon" />
+        </a>
+      </p>
+
+      <div className="social-media" data-aos="fade-up" data-aos-delay="400">
+        <a href="https://facebook.com" className="social-icon" aria-label="Facebook">
+          <FontAwesomeIcon icon={faFacebook} />
+        </a>
+        <a href="https://instagram.com" className="social-icon" aria-label="Instagram">
+          <FontAwesomeIcon icon={faInstagram} />
+        </a>
+        <a href="https://x.com" className="social-icon" aria-label="X (anteriormente Twitter)">
+          <FontAwesomeIcon icon={faXTwitter} />
+        </a>
+      </div>
+
+      {/* Contador de visitas */}
+      <div className="visit-counter">
+        <a href="https://www.hitwebcounter.com" target="_blank" rel="noopener noreferrer">
+          <img 
+            src="https://hitwebcounter.com/counter/counter.php?page=17014722&style=0038&nbdigits=9&type=page&initCount=0"
+            title="Counter Widget"
+            alt={t('visit_counter_alt')}
+            border="0"
+          />
+        </a>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
+
+
+--------------------------------------------------------------------------------
+Ruta del archivo: /Users/luisrojas/Documents/GitHub/arepas-mas-corp2/src/components/common/Header.css
+--------------------------------------------------------------------------------
+/* HEADER */
+.app-header {
+  width: 100%;
+  height: 80vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+}
+
+/* Barra de navegación */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  overflow-x: hidden;
+}
+
+/* Contenedor del logo y frase */
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 30px;
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+}
+
+.logo-subtitle {
+  font-size: 0.9rem;
+  color: #fff;
+  margin-top: 5px;
+  font-weight: bold;
+  background-color: #f39c12;
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: inline-block;
+  text-align: center;
+  margin-left: -30px;
+}
+
+/* Menú */
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  overflow-x: hidden;
+}
+
+.menu li {
+  font-size: 1.2rem;
+}
+
+.hero-content {
+  margin-top: -20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.hero-content h1 {
+  font-size: 5rem;
+  margin-bottom: 20px;
+  color: #fff;
+  text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.7);
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.sub-header {
+  font-size: 1.5rem;
+  color: #f39c12;
+  margin-top: 10px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+/* Botón CTA */
+.cta-button {
+  background-color: #f39c12;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  margin-top: 20px;
+  transition: background 0.3s ease;
+  text-transform: uppercase;
+}
+
+.cta-button:hover {
+  background-color: #d35400;
+}
+
+/* Menú hamburguesa */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 4px 0;
+}
+
+/* Menú móvil */
+.menu {
+  transition: transform 0.3s ease-in-out;
+}
+
+.menu.open {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 18px;
+  right: 111px;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 10px;
+  border-radius: 10px;
+  transform: translateY(0);
+  width: auto;
+  max-width: calc(100% - 40px);
+}
+
+.menu li {
+  margin-bottom: 10px;
+}
+
+/* Cambiar idioma */
+.language-switch {
+  display: flex;
+  gap: 10px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.language-switch button {
+  background: #f39c12;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.language-switch button:hover {
+  background: #d35400;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 1024px) {
+  .logo-container {
+      align-items: flex-start;
+  }
+
+  .logo {
+      width: 120px;
+  }
+
+  .logo-subtitle {
+      font-size: 0.85rem;
+  }
+
+  .hero-content h1 {
+      font-size: 3.5rem;
+  }
+
+  .hero-content p {
+      font-size: 1.2rem;
+  }
+
+  .sub-header {
+      font-size: 1.2rem;
+  }
+
+    /* Mostrar el menú hamburguesa en móviles */
+    .hamburger {
+      display: flex;
+    }
+  
+    .menu {
+      display: none;
+    }
+  
+    .menu.open {
+      display: flex;
+    }
+}
+
+@media (max-width: 600px) {
+  .logo-container {
+      align-items: flex-start;
+      margin-left: 10px;
+  }
+
+  .logo {
+      width: 100px;
+      margin-left: -20px;
+  }
+
+  .logo-subtitle {
+      font-size: 0.75rem;
+      text-align: left;
+      margin-left: -38px;
+  }
+
+  .hero-content h1 {
+      font-size: 2.5rem;
+  }
+
+  .hero-content p {
+      font-size: 1rem;
+  }
+
+  .sub-header {
+      font-size: 1rem;
+  }
+
+
+  
+  }
+  
+
+--------------------------------------------------------------------------------
+Ruta del archivo: /Users/luisrojas/Documents/GitHub/arepas-mas-corp2/src/components/common/Footer.css
+--------------------------------------------------------------------------------
+/* src/components/Footer.css */
+
+/* CONTACTO */
+.contact-section {
+    background-color: #333;
+    color: white;
+    padding: 50px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .contact-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .social-media {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .social-icon {
+    background-color: #afb2b5;
+    color: white;
+    padding: 10px;
+    border-radius: 50px;
+    transition: background 0.3s ease;
+  }
+  
+  .social-icon:hover {
+    background-color: #f39c12;
+  }
+  
+  /* Estilo para los íconos */
+  .whatsapp-link,
+  .linkedin-link,
+  .github-link {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    margin-right: 10px;
+  }
+  
+  .whatsapp-icon {
+    color: #25D366;
+    font-size: 24px;
+    margin-right: -5px;
+    margin-left: 10px;
+  }
+  
+  .linkedin-icon {
+    color: #0077B5;
+    font-size: 24px;
+  }
+  
+  .github-icon {
+    color: #e8e5e5;
+    font-size: 24px;
+    margin-right: 10px;
+  }
+  
+  .whatsapp-link:hover .whatsapp-icon {
+    color: #128C7E;
+  }
+  
+  .linkedin-link:hover .linkedin-icon {
+    color: #005582;
+  }
+  
+  .github-link:hover .github-icon {
+    color: #a8a3a3;
+  }
+  
+  .icon-link {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 10px;
+    font-size: 24px;
+  }
+  
+  .icon {
+    font-size: 24px;
+    vertical-align: middle;
+  }
+  
+
+--------------------------------------------------------------------------------
+Ruta del archivo: /Users/luisrojas/Documents/GitHub/arepas-mas-corp2/src/components/cart/Cart.css
+--------------------------------------------------------------------------------
+/* src/components/Cart.css */
+
+/* Contenedor principal del carrito */
+.cart-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  /* Estilo del título */
+  .cart-container h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Lista de artículos del carrito */
+  .cart-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+  }
+  
+  /* Cada elemento del carrito */
+  .cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  /* Información del artículo */
+  .item-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    text-align: left;
+  }
+  
+  .item-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .quantity-edit {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+  }
+  
+  .quantity-edit input {
+    width: 50px;
+    padding: 5px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .item-price {
+    font-size: 1.2rem;
+    color: #e74c3c;
+  }
+  
+  /* Botón para eliminar artículo */
+  .remove-button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-left: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .remove-button:hover {
+    background-color: #c0392b;
+  }
+  
+  /* Acciones del carrito (botones) */
+  .cart-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .clear-cart-button,
+  .checkout-button {
+    background-color: #f39c12;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .clear-cart-button:hover,
+  .checkout-button:hover {
+    background-color: #d35400;
+  }
+  
+  /* Estilo cuando el carrito está vacío */
+  .cart-empty {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 50px;
+    color: #333;
+  }
+  
+  .cart-empty i.empty-icon {
+    font-size: 4rem;
+    color: #ddd;
+    margin-bottom: 20px;
+    display: block;
+  }
+  
+  .cart-empty p {
+    font-size: 1.2rem;
+    color: #777;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  /* Animación para el mensaje vacío */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* RESPONSIVE DESIGN */
+  @media (max-width: 768px) {
+    .cart-container {
+      padding: 15px;
+    }
+  
+    .cart-item {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .cart-actions {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .clear-cart-button,
+    .checkout-button {
+      width: 100%;
+      padding: 10px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .cart-container h2 {
+      font-size: 1.8rem;
+    }
+  
+    .item-name {
+      font-size: 1.1rem;
+    }
+  
+    .item-price {
+      font-size: 1.1rem;
+    }
+  }
+  
+
+--------------------------------------------------------------------------------
+Ruta del archivo: /Users/luisrojas/Documents/GitHub/arepas-mas-corp2/src/components/cart/Cart.jsx
+--------------------------------------------------------------------------------
+// src/components/cart/Cart.jsx
+import React, { useContext } from 'react';
+import { useTranslation } from 'react-i18next';
+import { CartContext } from '../../context/CartContext';
+import { Link } from 'react-router-dom';
+import './Cart.css';
+import formatCurrency from '../../utils/formatCurrency';
+
+const Cart = () => {
+  const { t, i18n } = useTranslation();
+  const { cart, clearCart, updateQuantity, getTotal, removeFromCart } = useContext(CartContext);
+
+  const format = (value) => formatCurrency(value, i18n.language, 'USD');
+
+  if (cart.length === 0) {
+    return (
+      <div className="cart-empty">
+        <i className="fas fa-shopping-cart empty-icon"></i>
+        <p>{t('empty_cart')}</p>
+      </div>
+    );
+  }
+
+  return (
+    <div className="cart-container">
+      <h2>{t('cart_title')}</h2>
+      <ul className="cart-list">
+        {cart.map((item) => (
+          <li key={item.id} className="cart-item">
+            <div className="item-info">
+              <span className="item-name">{t(`product_names.${item.id}`)}</span>
+              <div className="quantity-edit">
+                <label htmlFor={`quantity-${item.id}`}>{t('quantity')}:</label>
+                <input
+                  type="number"
+                  id={`quantity-${item.id}`}
+                  value={item.quantity}
+                  min="1"
+                  onChange={(e) => updateQuantity(item.id, parseInt(e.target.value) || 1)}
+                />
+              </div>
+              <span className="item-price">
+                {format(item.price * item.quantity)}
+              </span>
+              <button className="remove-button" onClick={() => removeFromCart(item.id)}>
+                {t('remove')}
+              </button>
+            </div>
+          </li>
+        ))}
+      </ul>
+
+      <div className="cart-total">
+        <h3>{t('total')}: {format(getTotal())}</h3>
+      </div>
+
+      <div className="cart-actions">
+        <button className="clear-cart-button" onClick={clearCart}>{t('clear_cart')}</button>
+        <Link to="/checkout"><button className="checkout-button">{t('proceed_to_checkout')}</button></Link>
+      </div>
+    </div>
+  );
+};
+
+export default Cart;
+
+
