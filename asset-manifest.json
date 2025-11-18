@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/arepas-mas-corp/static/css/main.19c33ca0.css",
-    "main.js": "/arepas-mas-corp/static/js/main.5a66c507.js",
-    "static/js/38.2c3c245d.chunk.js": "/arepas-mas-corp/static/js/38.2c3c245d.chunk.js",
+    "main.css": "/arepas-mas-corp/static/css/main.f85db3e3.css",
+    "main.js": "/arepas-mas-corp/static/js/main.cff4eca6.js",
+    "static/js/38.676493d1.chunk.js": "/arepas-mas-corp/static/js/38.676493d1.chunk.js",
     "static/media/about-collage.jpg": "/arepas-mas-corp/static/media/about-collage.f04507112b91863f1509.jpg",
     "static/media/about-collage.webp": "/arepas-mas-corp/static/media/about-collage.f04507112b91863f1509.webp",
     "static/media/arepa_plain_pequena.jpg": "/arepas-mas-corp/static/media/arepa_plain_pequena.95ead0bd2e92ed723e8b.jpg",
@@ -10,17 +10,24 @@
     "static/media/hero-background.jpg": "/arepas-mas-corp/static/media/hero-background.043e5e19702317f89b00.jpg",
     "static/media/logo.png": "/arepas-mas-corp/static/media/logo.eba099173cc20bf376d5.png",
     "static/media/arepa_chocolo.jpg": "/arepas-mas-corp/static/media/arepa_chocolo.9b183daab3cf5dcdb1a0.jpg",
+    "static/media/papas_criollas.jpg": "/arepas-mas-corp/static/media/papas_criollas.006b99aa079f83eae663.jpg",
+    "static/media/empanadas.jpg": "/arepas-mas-corp/static/media/empanadas.134b494a0ed22e8b86c6.jpg",
+    "static/media/pandeyuca.jpg": "/arepas-mas-corp/static/media/pandeyuca.edc9579500fe7a5cf0cc.jpg",
+    "static/media/chorizo.jpg": "/arepas-mas-corp/static/media/chorizo.3ceacdd51869867d5824.jpg",
+    "static/media/morcilla.jpg": "/arepas-mas-corp/static/media/morcilla.9da93ffad8f041604689.jpg",
     "static/media/arepa_plain_grande.jpg": "/arepas-mas-corp/static/media/arepa_plain_grande.930361d362ccb62beaae.jpg",
+    "static/media/bunuelos.jpg": "/arepas-mas-corp/static/media/bunuelos.892e0ac61c86b373feee.jpg",
+    "static/media/pandebono.jpg": "/arepas-mas-corp/static/media/pandebono.0fda12c584acf3afc2a1.jpg",
     "static/media/hombre.jpg": "/arepas-mas-corp/static/media/hombre.b4839a55693b13248668.jpg",
     "static/media/deditos_queso.jpg": "/arepas-mas-corp/static/media/deditos_queso.fcd8021766dff7045f0b.jpg",
     "static/media/mujer2.jpg": "/arepas-mas-corp/static/media/mujer2.e8859b07cbea74119329.jpg",
     "index.html": "/arepas-mas-corp/index.html",
-    "main.19c33ca0.css.map": "/arepas-mas-corp/static/css/main.19c33ca0.css.map",
-    "main.5a66c507.js.map": "/arepas-mas-corp/static/js/main.5a66c507.js.map",
-    "38.2c3c245d.chunk.js.map": "/arepas-mas-corp/static/js/38.2c3c245d.chunk.js.map"
+    "main.f85db3e3.css.map": "/arepas-mas-corp/static/css/main.f85db3e3.css.map",
+    "main.cff4eca6.js.map": "/arepas-mas-corp/static/js/main.cff4eca6.js.map",
+    "38.676493d1.chunk.js.map": "/arepas-mas-corp/static/js/38.676493d1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.19c33ca0.css",
-    "static/js/main.5a66c507.js"
+    "static/css/main.f85db3e3.css",
+    "static/js/main.cff4eca6.js"
   ]
 }
