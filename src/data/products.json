@@ -1,7 +1,14 @@
 [
-  { "id": 1, "pack": 10, "price": 7.50, "imageKey": "arepaPlainGrande" },
-  { "id": 2, "pack": 20, "price": 7.50, "imageKey": "arepaPlainPequena" },
-  { "id": 3, "pack": 5,  "price": 7.50, "imageKey": "arepaChocolo" },
-  { "id": 4, "pack": 5,  "price": 8.00, "imageKey": "arepaQueso" },
-  { "id": 5, "pack": 10, "price": 11.00, "imageKey": "deditosQueso" }
+  { "id": 1,  "pack": 10,      "price": 7.75, "imageKey": "arepaPlainGrande"   },
+  { "id": 2,  "pack": 20,      "price": 7.75, "imageKey": "arepaPlainPequena"  },
+  { "id": 3,  "pack": 5,       "price": 7.75, "imageKey": "arepaChocolo"       },
+  { "id": 4,  "pack": 5,       "price": 8.25, "imageKey": "arepaQueso"         },
+  { "id": 5,  "pack": 10,      "price": 11.25,"imageKey": "deditosQueso"       },
+  { "id": 6,  "pack": 10,      "price": 15.25,"imageKey": "pandebono"          },
+  { "id": 7,  "pack": 4,       "price": 7.75, "imageKey": "chorizo"            },
+  { "id": 8,  "pack": 4,       "price": 7.75, "imageKey": "morcilla"           },
+  { "id": 9,  "pack": 10,      "price": 12.25,"imageKey": "pandeyuca"          },
+  { "id": 10, "pack": 20,      "price": 25.25,"imageKey": "bunuelos"           },
+  { "id": 11, "pack": 25,      "price": 28.25,"imageKey": "empanadas"          },
+  { "id": 12, "pack": "2 LBS", "price": 7.25, "imageKey": "papasCriollas"      }
 ]
